@@ -20,6 +20,7 @@ public class UserController {
     public ResponseEntity<UserDTO> saveUser(@RequestBody UserDTO userDTO) {
         try {
             System.out.println(userDTO);
+            userService.saveUser(userDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(userDTO);
 
         } catch (Exception exception){
